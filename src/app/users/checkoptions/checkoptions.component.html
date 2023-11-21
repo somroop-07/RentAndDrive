@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12" style="text-align: center">
+      <h4 class="mb-4">CAR MODELS AVAILABLE</h4>
+    </div>
+    <div class="col md-6 xs-12">
+      <div class="row" style="margin: 20px" *ngFor="let car of carArray">
+        <div class="card">
+          <img
+            src="assets/images/defaultcar.jpg"
+            class="card-img-top"
+            style="width: 300px; margin-top: 40px; margin-left: 40px"
+            alt="Car Image"
+          />
+          <br />
+          <div class="row">
+            <div class="col xs-12">
+              <h4>Brand: {{ car.brand }}</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col xs-12">
+              <h4>Model: {{ car.model }}</h4>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col xs-12">
+              <button class="btn btn-dark" (click)="onClicked(car)">
+                View Options
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col md-6" *ngIf="isClicked">
+      <div class="col xs-12">
+        <div *ngFor="let cardet of carDetailsArray">
+          <div class="card">
+            <div class="row">
+              <img
+                src="{{ cardet.image }}"
+                class="card-img-top"
+                style="width: 300px; margin-top: 40px; margin-left: 40px"
+                alt="Car Image"
+              />
+            </div>
+            <br />
+            <div class="row">
+              <div class="col xs-12">
+                <h2>Cost per day: ₹{{ cardet.cost }}</h2>
+              </div>
+
+              <div class="col xs-12">
+                <h2>Mileage: {{ cardet.mileage }}</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col xs-12">
+                <h2>Area Code: {{ cardet.area_code }}</h2>
+              </div>
+
+              <div class="col xs-12">
+                <h2>Capacity: {{ cardet.capacity }} seater</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col xs-12">
+                <h2 *ngIf="cardet.availability" style="color: green">
+                  Available
+                </h2>
+                <h2 *ngIf="!cardet.availability" style="color: red">
+                  Not Available
+                </h2>
+              </div>
+              <div class="col xs-12">
+                <button class="btn btn-dark" [disabled]="!cardet.availability">
+                  Send Enquiry!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
