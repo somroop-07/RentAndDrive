@@ -14,7 +14,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HeaderComponent } from './header/header.component';
 import { ChoiceComponent } from './choice/choice.component';
 import { BookingsComponent } from './booking/bookings/bookings.component';
-
+import { OverlayModule } from '@angular/cdk/overlay';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDateRangeInput } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
@@ -56,7 +56,8 @@ import { DateRangeDialogComponent } from './date-range-dialog/date-range-dialog.
     ReactiveFormsModule,
     MatMomentDateModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    OverlayModule
   
   ],
   providers: [],

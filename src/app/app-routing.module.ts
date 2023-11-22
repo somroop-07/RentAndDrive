@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'filldetails',component:FillDetailsComponent,canActivate:[AuthGuardSevice]},
   {path:'users',component:CheckoptionsComponent},
   {path:'register',component:RegistrationComponent},
-  {path:'choice',component:ChoiceComponent,canActivate:[AuthGuardSevice]},
+  {path:'choice',component:ChoiceComponent},
   {path:'bookings',component:BookingsComponent,canActivate:[AuthGuardAdminSevice]}
 ];
 
