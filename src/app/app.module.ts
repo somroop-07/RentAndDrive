@@ -15,10 +15,22 @@ import { HeaderComponent } from './header/header.component';
 import { ChoiceComponent } from './choice/choice.component';
 import { BookingsComponent } from './booking/bookings/bookings.component';
 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDateRangeInput } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatMomentDateModule } from '@angular/material-moment-adapter'
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatNativeDateModule} from '@angular/material/core';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { DateRangeDialogComponent } from './date-range-dialog/date-range-dialog.component';
 
 
 @NgModule({
   declarations: [
+    
     AppComponent,
     HomeComponent,
     AddcarComponent,
@@ -29,14 +41,23 @@ import { BookingsComponent } from './booking/bookings/bookings.component';
     RegistrationComponent,
     HeaderComponent,
     ChoiceComponent,
-    BookingsComponent
+    BookingsComponent,
+    DateRangeDialogComponent
   ],
   imports: [
+    
+    MatDatepickerModule, MatInputModule,
     BrowserModule,
     AppRoutingModule,
+    MatFormFieldModule,
     HttpClientModule,
+    MatNativeDateModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMomentDateModule,
+    MatDialogModule,
+    BrowserAnimationsModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,9 @@ import { Subject } from 'rxjs';
 })
 export class UserService {
   private baseUrl= "http://localhost:9000/"
+  private id:number=0;
+  private name:string="";
+  private mobile:string="";
   constructor(private http:HttpClient) {}
     getuser(email:string):Observable<User>{
        return this.http.get<User>(this.baseUrl+'users'+'/'+email);
@@ -26,5 +29,11 @@ export class UserService {
 
   getEvent() {
     return this.eventSubject.asObservable();
+  }
+  setID(id:number){
+    this.id=id;
+  }
+  getID(){
+    return this.id;
   }
 }

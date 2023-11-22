@@ -1,0 +1,15 @@
+/* Change background color of the entire date picker */
+.mat-datepicker-content {
+    background-color: #f0f0f0;
+  }
+  
+  /* Change the color of the header text */
+  .mat-datepicker-content-header {
+    color: #333;
+  }
+  
+  /* Customize the style of the selected date */
+  .mat-calendar-body-selected {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }

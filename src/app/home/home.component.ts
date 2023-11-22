@@ -34,6 +34,7 @@ export class HomeComponent {
                   }
                 else{
                   this.authservice.setAuthenticatedUser(true);
+                  this.service.setID(data.id);
                   this.router.navigate(['/choice']);
                   this.service.sendEvent();
                 }

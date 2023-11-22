@@ -36,7 +36,7 @@
     </div>
     <div class="col md-6" *ngIf="isClicked">
       <div class="col xs-12">
-        <div *ngFor="let cardet of carDetailsArray">
+        <div *ngFor="let cardet of carDetailsArray" style="margin-top: 20px">
           <div class="card">
             <div class="row">
               <img
@@ -74,11 +74,13 @@
                   Not Available
                 </h2>
               </div>
+
               <div class="col xs-12">
                 <button
+                  style="margin-top: 20px"
                   class="btn btn-dark"
                   [disabled]="!cardet.availability"
-                  (click)="onSendEnquiry()"
+                  (click)="onSendEnquiry(cardet)"
                 >
                   Send Enquiry!
                 </button>

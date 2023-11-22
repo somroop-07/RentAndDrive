@@ -23,6 +23,7 @@ export class RegistrationComponent {
             this.service.addUser(this.UserDetails).subscribe(data=>{
              console.log(data);
              this.authservice.setAuthenticatedUser(true);
+             this.service.setID(data.id)
              this.service.sendEvent();
              this.router.navigate(['/choice'])
             })
