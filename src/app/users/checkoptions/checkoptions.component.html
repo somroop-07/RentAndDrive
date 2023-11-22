@@ -75,7 +75,11 @@
                 </h2>
               </div>
               <div class="col xs-12">
-                <button class="btn btn-dark" [disabled]="!cardet.availability">
+                <button
+                  class="btn btn-dark"
+                  [disabled]="!cardet.availability"
+                  (click)="onSendEnquiry()"
+                >
                   Send Enquiry!
                 </button>
               </div>

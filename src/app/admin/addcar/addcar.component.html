@@ -3,6 +3,11 @@
     <div class="col-xs-12" style="text-align: center">
       <h2 class="mb-4">CAR MODELS AVAILABLE</h2>
     </div>
+    <div class="col-xs-12" style="text-align: center">
+      <button class="btn btn-secondary" (click)="onClickBooking()">
+        Click here to view booking list
+      </button>
+    </div>
     <div class="col" style="margin: 20px" *ngFor="let car of carArray">
       <div class="card">
         <img

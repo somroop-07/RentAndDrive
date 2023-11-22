@@ -33,7 +33,10 @@ export class CheckoptionsComponent {
       this.service.getCarList(car.id).subscribe(data=>{
           this.carDetailsArray=data;
       });
-    }
+    } 
+    
+  }
+  onSendEnquiry(){
     
   }
 

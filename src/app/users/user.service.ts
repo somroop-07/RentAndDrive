@@ -15,6 +15,9 @@ export class UserService {
     addUser(data:any):Observable<User>{
       return this.http.post<User>(this.baseUrl+'users',data);
     }
+    getsingleUser(id:number):Observable<User>{
+      return this.http.get<User>(this.baseUrl+'usersbyid'+'/'+id);
+    }
     private eventSubject = new Subject<void>();
 
   sendEvent() {

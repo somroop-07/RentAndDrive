@@ -1,17 +1,17 @@
 div{
     margin: 2px;
     padding: 2px;
-    font-size: 30px;
+    font-size: 20px;
 }
 input{
     margin: 2px;
     padding: 2px;
-    font-size: 30px;
+    font-size: 20px;
     border-color: bisque;
 }
 button{
-    font-size: 30px;
-    background-color: rgb(141, 141, 230);
+    font-size: 20px;
+    
     margin-top: 30px;
    
 }

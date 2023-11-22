@@ -13,6 +13,7 @@ import { CheckoptionsComponent } from './users/checkoptions/checkoptions.compone
 import { RegistrationComponent } from './registration/registration.component';
 import { HeaderComponent } from './header/header.component';
 import { ChoiceComponent } from './choice/choice.component';
+import { BookingsComponent } from './booking/bookings/bookings.component';
 
 
 
@@ -27,7 +28,8 @@ import { ChoiceComponent } from './choice/choice.component';
     CheckoptionsComponent,
     RegistrationComponent,
     HeaderComponent,
-    ChoiceComponent
+    ChoiceComponent,
+    BookingsComponent
   ],
   imports: [
     BrowserModule,

@@ -9,15 +9,17 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AuthGuardAdminSevice } from './auth-guard-admin.service';
 import { AuthGuardSevice } from './auth-guard.service';
 import { ChoiceComponent } from './choice/choice.component';
+import { BookingsComponent } from './booking/bookings/bookings.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'addcar',component:AddcarComponent,canActivate:[AuthGuardAdminSevice]},
   {path:'addcardetails',component:AddvehicleComponent,canActivate:[AuthGuardSevice]},
-  {path:'filldetails',component:FillDetailsComponent},
-  {path:'users',component:CheckoptionsComponent,canActivate:[AuthGuardSevice]},
+  {path:'filldetails',component:FillDetailsComponent,canActivate:[AuthGuardSevice]},
+  {path:'users',component:CheckoptionsComponent},
   {path:'register',component:RegistrationComponent},
-  {path:'choice',component:ChoiceComponent,canActivate:[AuthGuardSevice]}
+  {path:'choice',component:ChoiceComponent,canActivate:[AuthGuardSevice]},
+  {path:'bookings',component:BookingsComponent,canActivate:[AuthGuardAdminSevice]}
 ];
 
 @NgModule({

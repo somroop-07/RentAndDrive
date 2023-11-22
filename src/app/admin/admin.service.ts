@@ -15,5 +15,8 @@ export class AdminService {
     addNewCar(data:any):Observable<Car[]>{
       return this.http.post<Car[]>(this.baseUrl+'cars',data);
     }
+    getCar(id:number):Observable<Car>{
+      return this.http.get<Car>(this.baseUrl+'cars'+'/'+id);
+    }
    }
 

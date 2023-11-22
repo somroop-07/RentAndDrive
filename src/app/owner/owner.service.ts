@@ -15,6 +15,9 @@ export class OwnerService {
     addCarDetails(data:any):Observable<CarDetails[]>{
       return this.http.post<CarDetails[]>(this.baseUrl+'cardetails',data);
     }
+    getSingleCar(id:number):Observable<CarDetails>{
+      return this.http.get<CarDetails>(this.baseUrl+'cardetailsbyId'+'/'+id);
+    }
   setData(data:any)
   {
     this.sharedData=data;

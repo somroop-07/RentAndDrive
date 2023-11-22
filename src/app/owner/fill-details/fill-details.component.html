@@ -1,9 +1,9 @@
 <section style="background-color: #9a616d">
   <div class="row d-flex justify-content-center align-items-center h-100">
-    <div class="col col-xl-10">
+    <div class="col col-xl-8" style="margin-top: 100px">
       <div
         class="card"
-        style="border-radius: 1rem; padding: 20px; align-items: center"
+        style="border-radius: 1rem; padding: 50px; align-items: center"
       >
         <div class="row g-0">
           <div class="card-body text-black align-items-center">
@@ -140,16 +140,21 @@
         </span> -->
                 <div style="text-align: center">
                   <button
-                    [disabled]="!f.valid"
-                    class="btn btn-success"
+                    class="btn btn-success btn-lg"
                     type="submit"
+                    [disabled]="!f.valid"
+                    style="width: 200px"
                   >
                     Add Car
                   </button>
                 </div>
               </form>
               <div style="text-align: center">
-                <button class="btn btn-danger" (click)="OnCancel()">
+                <button
+                  class="btn btn-danger btn-lg"
+                  (click)="OnCancel()"
+                  style="width: 200px"
+                >
                   Cancel
                 </button>
               </div>
