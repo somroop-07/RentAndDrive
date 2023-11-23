@@ -11,6 +11,7 @@ import { DateRangeDialogComponent } from 'src/app/date-range-dialog/date-range-d
 import { MatDialog } from '@angular/material/dialog';
 import { BookingService } from 'src/app/booking/booking.service';
 import { UserService } from '../user.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-checkoptions',
@@ -22,7 +23,7 @@ export class CheckoptionsComponent {
   endDate: Date=new Date();
   carArray:Car[]=[];
   carDetailsArray:CarDetails[]=[];
-  //isDateOpen:boolean=false;
+  isDateOpen:boolean=false;
   isClicked:boolean=false;
   booking:any={};
   constructor(private dialog:MatDialog,private adminService:AdminService,private router:Router,private service:OwnerService,private bservice:BookingService,private userService: UserService){};
@@ -47,21 +48,35 @@ export class CheckoptionsComponent {
     } 
     
   }
+  onCancel(){
+    this.isDateOpen=false;
+  }
+  onSubmit(form:NgForm){
+       this.booking.startDate=form.value.startDate;
+       this.booking.endDate=form.value.endDate;
+       this.isDateOpen=false;
+       this.bservice.addNewBooking(this.booking).subscribe(data=>{
+        console.log(data);
+        alert("Thanks, your request has been submitted!")
+       })
+       
+       
+  }
   onSendEnquiry(car:any){
-      //this.isDateOpen=true;
+      this.isDateOpen=true;
      
-      const dialogRef = this.dialog.open(DateRangeDialogComponent, {
-        width: '400px',
-        height:'250px',
-        position: {top: '0px', right:'0px'} 
+      // const dialogRef = this.dialog.open(DateRangeDialogComponent, {
+      //   width: '400px',
+      //   height:'250px',
+      //   position: {top: '20px', left:'500px', bottom:'40px',} 
         
-      });
+      // });
       
-        dialogRef.afterClosed().subscribe(result => {
-           if(result!=null){
+        // dialogRef.afterClosed().subscribe(result => {
+        //    if(result!=null){
           
-            this.startDate=result.startDate;
-            this.endDate=result.endDate;
+        //     this.startDate=result.startDate;
+        //     this.endDate=result.endDate;
             //console.log(typeof(this.startDate));
           //   const year = this.startDate.getFullYear();
           //   const month = String(this.startDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
@@ -80,13 +95,13 @@ export class CheckoptionsComponent {
             // this.booking.endDate=formattedEndDate;
             this.booking.amount=car.cost;
             this.booking.carid=car.id;
-            
+          
             this.booking.userid=this.userService.getID();
             console.log(this.booking);
            
            }
-        });
+        // });
       
   }
 
-}
+

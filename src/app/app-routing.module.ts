@@ -16,9 +16,9 @@ const routes: Routes = [
   {path:'addcar',component:AddcarComponent,canActivate:[AuthGuardAdminSevice]},
   {path:'addcardetails',component:AddvehicleComponent,canActivate:[AuthGuardSevice]},
   {path:'filldetails',component:FillDetailsComponent,canActivate:[AuthGuardSevice]},
-  {path:'users',component:CheckoptionsComponent},
+  {path:'users',component:CheckoptionsComponent,canActivate:[AuthGuardSevice]},
   {path:'register',component:RegistrationComponent},
-  {path:'choice',component:ChoiceComponent},
+  {path:'choice',component:ChoiceComponent,canActivate:[AuthGuardSevice]},
   {path:'bookings',component:BookingsComponent,canActivate:[AuthGuardAdminSevice]}
 ];
 

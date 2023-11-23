@@ -1,7 +1,7 @@
 <div style="padding: 20px">
-  <mat-form-field>
+  <mat-form-field class="form-group">
     <input
-      class="input-group"
+      class="form-control"
       matInput
       [matDatepicker]="startPicker"
       placeholder="Start Date"
@@ -14,10 +14,10 @@
     <mat-datepicker #startPicker></mat-datepicker>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="form-group">
     <input
       matInput
-      class="input-group"
+      class="form-control"
       [matDatepicker]="endPicker"
       placeholder="End Date"
       [(ngModel)]="endDate"
